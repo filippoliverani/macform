@@ -73,7 +73,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 xcode-select --install
 brew doctor
 brew tap Homebrew/bundle
-brew bundle
+brew bundle --file "$HOME/.macform/Brewfile"
 
 #atom
 apm install ex-mode
