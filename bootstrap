@@ -1,0 +1,16 @@
+#!/bin/sh
+
+path="$HOME/.macform"
+
+if [ -e $path/.git ]; then
+    cd $path && git pull
+else
+    git clone https://github.com/filippo-liverani/macform.git $path
+fi
+
+ln -sf $path/Brewfile ~/.Brewfile
+sh $path/install
+
+curl https://raw.github.com/filippo-liverani/dotfiles/master/bootstrap -L -o - | sh
+curl https://raw.github.com/filippo-liverani/zshell/master/bootstrap -L -o - | sh
+curl https://raw.github.com/filippo-liverani/simsalavim/master/bootstrap -L -o - | sh
