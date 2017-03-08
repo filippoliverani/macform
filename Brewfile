@@ -19,10 +19,10 @@ brew 'node'
 brew 'tmux'
 brew 'reattach-to-user-namespace'
 brew 'ranger'
-brew 'the_silver_searcher'
+brew 'ripgrep'
 brew 'vim', args: ['with-python', 'with-ruby', 'with-perl', 'env-std', 'override-system-vim']
 brew 'packer'
-brew 'octave'
+brew 'mongodb'
 brew 'cask'
 
 cask 'firefox'
@@ -49,6 +49,7 @@ cask 'docker'
 cask 'tinkertool'
 cask 'screenhero'
 cask 'sublime-text'
+cask 'anodizer'
 
 mas 'Xcode', id: 497799835
 mas 'LastPass', id: 926036361
