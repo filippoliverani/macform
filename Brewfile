@@ -23,6 +23,7 @@ brew 'ripgrep'
 brew 'vim', args: ['with-python', 'with-ruby', 'with-perl', 'env-std', 'override-system-vim']
 brew 'packer'
 brew 'mongodb'
+brew 'ctags'
 brew 'cask'
 
 cask 'firefox'
