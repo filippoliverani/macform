@@ -7,18 +7,49 @@ echo 'export PATH=/usr/local/bin:/usr/local/sbin:$PATH' > ~/.profile
 
 #config
 
+sudo defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist ProgramArguments -array-add "-NoMulticastAdvertisements"
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate off
+sudo spctl --master-disable
+
 defaults write com.apple.finder AppleShowAllFiles -bool true
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 defaults write com.apple.finder ShowStatusBar -bool true
+defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
-defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
 defaults write com.apple.Finder QuitMenuItem -bool true
-defaults write com.apple.finder CreateDesktop -bool true
+defaults write com.apple.finder CreateDesktop -bool false
 defaults write com.apple.finder DisableAllAnimations -bool true
 defaults write com.apple.finder QLEnableTextSelection -bool true
+defaults write com.apple.finder NewWindowTarget -string "PfLo"
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
 
+defaults write com.apple.dock no-glass -bool true
+defaults write com.apple.dock expose-animation-duration -float 0.1
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock autohide-delay -float 0
+defaults write com.apple.dock autohide-time-modifier -float 1
+
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+defaults write com.apple.universalaccess reduceTransparency -bool true
+defaults write com.apple.BezelServices kDimTime -int 300
+defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
+defaults write com.apple.Safari UniversalSearchEnabled -bool false
+defaults write com.apple.Safari SuppressSearchSuggestions -bool true
+defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
+defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool false
+defaults write com.google.Chrome DisablePrintPreview -bool true
+defaults write com.google.Chrome.canary DisablePrintPreview -bool true
+
+defaults write -g com.apple.trackpad.scaling 2
+defaults write -g com.apple.mouse.scaling 2.5
+
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
@@ -29,36 +60,17 @@ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write NSGlobalDomain AppleFontSmoothing -int 2
-defaults write NSGlobalDomain KeyRepeat -int 0
+defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
-defaults write com.apple.LaunchServices LSQuarantine -bool false
-
-defaults write com.apple.dock no-glass -bool true
-defaults write com.apple.dock expose-animation-duration -float 0.1
-defaults write com.apple.dock autohide -bool true
-defaults write com.apple.dock autohide-delay -float 0
-defaults write com.apple.dock autohide-time-modifier -float 1
-
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
-defaults write com.apple.universalaccess reduceTransparency -bool true
-defaults write com.apple.BezelServices kDimTime -int 300
-
-defaults write -g com.apple.trackpad.scaling 2
-defaults write -g com.apple.mouse.scaling 2.5
-
-defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
-
-defaults write com.apple.Safari UniversalSearchEnabled -bool false
-defaults write com.apple.Safari SuppressSearchSuggestions -bool true
-defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
-defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool false
-defaults write com.google.Chrome DisablePrintPreview -bool true
-defaults write com.google.Chrome.canary DisablePrintPreview -bool true
+defaults write -g NSTableViewDefaultSizeMode -int 3
+defaults write -g ApplePressAndHoldEnabled -bool false
 
 killall Finder || true
 killall Dock || true
 killall SystemUIServer || true
+
+chflags nohidden ~/Library
 
 sudo pmset -a sms 0
 sudo pmset -a powernap 0
@@ -74,6 +86,7 @@ xcode-select --install
 brew doctor
 brew tap Homebrew/bundle
 brew bundle --file "$HOME/.macform/Brewfile"
+xcrun simctl delete unavailable
 
 #atom
 apm install ex-mode
