@@ -1,11 +1,16 @@
 #!/bin/sh
 
+set -e
+
 path="$HOME/.macform"
 
+xcode-select --install || true
+sudo xcodebuild -license accept || true
+
 if [ -e $path/.git ]; then
-    cd $path && git pull
+  cd $path && git pull
 else
-    git clone https://github.com/filippo-liverani/macform.git $path
+  git clone https://github.com/filippo-liverani/macform.git $path
 fi
 
 ln -sf $path/Brewfile ~/.Brewfile
@@ -13,5 +18,6 @@ sh $path/install
 
 curl https://raw.github.com/filippo-liverani/dotfiles/master/bootstrap -L -o - | sh
 curl https://raw.github.com/filippo-liverani/zshell/master/bootstrap -L -o - | sh
+curl https://raw.github.com/filippo-liverani/determinal/master/bootstrap -L -o - | sh
 curl https://raw.github.com/filippo-liverani/simsalavim/master/bootstrap -L -o - | sh
 curl https://raw.github.com/filippo-liverani/turbomux/master/bootstrap -L -o - | sh
