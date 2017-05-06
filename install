@@ -7,8 +7,11 @@ echo 'export PATH=/usr/local/bin:/usr/local/sbin:$PATH' > ~/.profile
 
 #config
 
-sudo defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist ProgramArguments -array-add "-NoMulticastAdvertisements"
-sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate off
+sudo defaults write /Library/Preferences/com.apple.mDNSResponder.plist NoMulticastAdvertisements -bool YES
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
+
 sudo spctl --master-disable
 
 defaults write com.apple.finder AppleShowAllFiles -bool true
@@ -79,35 +82,33 @@ hash tmutil &> /dev/null && sudo tmutil disablelocal
 
 #brew
 
-export HOMEBREW_NO_ANALYTICS=1
-
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-xcode-select --install
-brew doctor
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null
+brew analytics off
 brew tap Homebrew/bundle
-brew bundle --file "$HOME/.macform/Brewfile"
+brew bundle --file="$HOME/.macform/Brewfile"
 xcrun simctl delete unavailable
 
 #atom
-apm install ex-mode
-apm install vim-mode
+
+/usr/local/bin/apm install ex-mode
+/usr/local/bin/apm install vim-mode
 
 #node
 
-npm install -g azure-cli
-npm install -g eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-promise eslint-plugin-react eslint-plugin-jsx-a11y
+/usr/local/bin/npm install -g azure-cli
+/usr/local/bin/npm install -g eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-promise eslint-plugin-react eslint-plugin-jsx-a11y
 
 #scheme
 
-raco pkg install --auto --scope installation --skip-installed berkeley xrepl
+/usr/local/bin/raco pkg install --auto --scope installation --skip-installed berkeley xrepl
 
 #powerline
 
-pip install pip
-pip install setuptools
-pip install psutil
-pip install powerline-status
+/usr/local/bin/pip install pip
+/usr/local/bin/pip install setuptools
+/usr/local/bin/pip install psutil
+/usr/local/bin/pip install powerline-status
 
 #fonts
 
-curl -fLo ~/Library/Fonts/Inconsolata\ for\ Powerline\ Nerd\ Font\ Complete.otf https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Inconsolata/complete/Inconsolata%20for%20Powerline%20Nerd%20Font%20Complete.otf
+wget -N -O ~/Library/Fonts/Inconsolata\ for\ Powerline\ Nerd\ Font\ Complete.otf https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Inconsolata/complete/Inconsolata%20for%20Powerline%20Nerd%20Font%20Complete.otf
