@@ -31,7 +31,6 @@ brew 'wget'
 brew 'curl', args: ['with-openssl']
 brew 'httpie'
 
-cask 'google-chrome'
 cask 'anodizer'
 cask 'alfred'
 cask 'caffeine'
@@ -49,9 +48,10 @@ cask 'atom'
 cask 'virtualbox'
 cask 'postman'
 cask 'docker'
-#cask 'tinkertool'
+cask 'tinkertool'
 cask 'screenhero'
 cask 'sublime-text'
+cask 'steam'
 
 mas 'Xcode', id: 497799835
 mas 'LastPass', id: 926036361
