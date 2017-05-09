@@ -52,6 +52,7 @@ cask 'tinkertool'
 cask 'screenhero'
 cask 'sublime-text'
 cask 'steam'
+cask 'acorn'
 
 mas 'Xcode', id: 497799835
 mas 'LastPass', id: 926036361
