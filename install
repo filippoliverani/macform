@@ -88,6 +88,11 @@ brew tap Homebrew/bundle
 brew bundle --file="$HOME/.macform/Brewfile"
 xcrun simctl delete unavailable
 
+#ruby
+
+/usr/local/bin/gem install bundler
+/usr/local/bin/gem install rubocop
+
 #atom
 
 /usr/local/bin/apm install ex-mode
