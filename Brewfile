@@ -30,6 +30,7 @@ brew 'openssl'
 brew 'wget'
 brew 'curl', args: ['with-openssl']
 brew 'httpie'
+brew 'yarn'
 
 cask 'anodizer'
 cask 'alfred'
