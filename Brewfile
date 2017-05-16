@@ -31,6 +31,7 @@ brew 'wget'
 brew 'curl', args: ['with-openssl']
 brew 'httpie'
 brew 'yarn'
+brew 'htop'
 
 cask 'anodizer'
 cask 'alfred'
@@ -54,6 +55,8 @@ cask 'screenhero'
 cask 'sublime-text'
 cask 'steam'
 cask 'acorn'
+cask 'onyx'
+cask 'launchcontrol'
 
 mas 'Xcode', id: 497799835
 mas 'LastPass', id: 926036361
