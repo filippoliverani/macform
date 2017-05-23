@@ -107,12 +107,11 @@ xcrun simctl delete unavailable
 
 /usr/local/bin/raco pkg install --auto --scope installation --skip-installed berkeley xrepl
 
-#powerline
+#python
 
 /usr/local/bin/pip install pip
 /usr/local/bin/pip install setuptools
 /usr/local/bin/pip install psutil
-/usr/local/bin/pip install powerline-status
 
 #vagrant
 

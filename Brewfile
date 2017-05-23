@@ -32,6 +32,7 @@ brew 'curl', args: ['with-openssl']
 brew 'httpie'
 brew 'yarn'
 brew 'htop'
+brew 'powerline'
 
 cask 'anodizer'
 cask 'alfred'
