@@ -20,7 +20,7 @@ brew 'node'
 brew 'tmux'
 brew 'ranger'
 brew 'ripgrep'
-brew 'vim', args: ['with-override-system-vim']
+brew 'vim', args: ['with-override-system-vi']
 brew 'packer'
 brew 'ctags'
 brew 'cask'
@@ -32,8 +32,8 @@ brew 'curl', args: ['with-openssl']
 brew 'httpie'
 brew 'yarn'
 brew 'htop'
-brew 'powerline'
 
+cask 'android-platform-tools'
 cask 'anodizer'
 cask 'alfred'
 cask 'caffeine'
