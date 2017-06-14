@@ -4,6 +4,8 @@ tap 'homebrew/dupes'
 tap 'homebrew/versions'
 tap 'homebrew/homebrew-php'
 tap 'caskroom/cask'
+tap 'caskroom/drivers'
+tap 'caskroom/fonts'
 tap 'buo/cask-upgrade'
 tap 'filippo-liverani/alcoholfree'
 
@@ -37,7 +39,6 @@ cask 'android-platform-tools'
 cask 'anodizer'
 cask 'alfred'
 cask 'caffeine'
-cask 'pomodone'
 cask 'monolingual'
 cask 'tunnelblick'
 cask 'google-drive'
@@ -58,7 +59,11 @@ cask 'steam'
 cask 'acorn'
 cask 'onyx'
 cask 'launchcontrol'
+cask 'determinal'
+
+cask 'garmin-express'
 
 mas 'Xcode', id: 497799835
 mas 'LastPass', id: 926036361
 mas 'Microsoft Remote Desktop', id: 715768417
+mas 'Tomato One', id: 907364780
