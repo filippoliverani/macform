@@ -117,7 +117,3 @@ xcrun simctl delete unavailable
 
 /usr/local/bin/vagrant plugin install vagrant-vbguest
 /usr/local/bin/vagrant plugin install vagrant-berkshelf
-
-#fonts
-
-wget -N -O ~/Library/Fonts/Inconsolata\ for\ Powerline\ Nerd\ Font\ Complete.otf https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Inconsolata/complete/Inconsolata%20for%20Powerline%20Nerd%20Font%20Complete.otf
