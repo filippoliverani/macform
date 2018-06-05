@@ -100,7 +100,7 @@ xcrun simctl delete unavailable
 
 #node
 
-/usr/local/bin/npm install -g azure-cli vtop
+/usr/local/bin/npm install -g azure-cli
 /usr/local/bin/npm install -g eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-promise eslint-plugin-react eslint-plugin-jsx-a11y
 
 #scheme
