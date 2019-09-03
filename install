@@ -7,6 +7,13 @@ echo 'export PATH=/usr/local/bin:/usr/local/sbin:$PATH' > ~/.profile
 
 #config
 
+COMPUTER_NAME="${COMPUTER_NAME:-ABC}"
+
+sudo scutil --set ComputerName "$COMPUTER_NAME"
+sudo scutil --set HostName "$COMPUTER_NAME"
+sudo scutil --set LocalHostName "$COMPUTER_NAME"
+defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$cpname"
+
 sudo defaults write /Library/Preferences/com.apple.mDNSResponder.plist NoMulticastAdvertisements -bool YES
 
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
@@ -57,7 +64,7 @@ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
-defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsTo
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
@@ -100,8 +107,7 @@ xcrun simctl delete unavailable
 
 #node
 
-/usr/local/bin/npm install -g azure-cli
-/usr/local/bin/npm install -g eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-promise eslint-plugin-react eslint-plugin-jsx-a11y
+/usr/local/bin/npm install -g eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-promise eslint-plugin-react eslint-plugin-jsx-a11y eslint-plugin-vue
 
 #scheme
 
