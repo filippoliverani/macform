@@ -3,8 +3,8 @@ cask_args appdir: '/Applications'
 tap 'caskroom/cask'
 tap 'filippo-liverani/alcoholfree'
 
+brew 'bat'
 brew 'cask'
-brew 'ccat'
 brew 'colordiff'
 brew 'coreutils'
 brew 'ctags'
@@ -14,6 +14,7 @@ brew 'exa'
 brew 'fpp'
 brew 'fzf'
 brew 'git'
+brew 'ghostscript'
 brew 'glances'
 brew 'httpie'
 brew 'jq'
@@ -59,6 +60,7 @@ cask 'monolingual'
 cask 'postman'
 cask 'skype'
 cask 'steam'
+cask 'the-unarchiver'
 cask 'tinkertool'
 cask 'tor-browser'
 cask 'tunnelbear'
@@ -74,6 +76,5 @@ mas 'LastPass', id: 926036361
 mas 'Microsoft Remote Desktop', id: 1295203466
 mas 'Numbers', id: 409203825
 mas 'Pages', id: 409201541
-mas 'The Unarchiver', id: 425424353
 mas 'Tomato One', id: 907364780
 mas 'Xcode', id: 497799835
