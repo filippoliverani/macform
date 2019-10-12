@@ -12,7 +12,7 @@ COMPUTER_NAME="${COMPUTER_NAME:-ABC}"
 sudo scutil --set ComputerName "$COMPUTER_NAME"
 sudo scutil --set HostName "$COMPUTER_NAME"
 sudo scutil --set LocalHostName "$COMPUTER_NAME"
-defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$cpname"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$cpname"
 
 sudo defaults write /Library/Preferences/com.apple.mDNSResponder.plist NoMulticastAdvertisements -bool YES
 
@@ -21,64 +21,64 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
 
 sudo spctl --master-disable
 
-defaults write com.apple.finder AppleShowAllFiles -bool true
-defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
-defaults write com.apple.finder ShowStatusBar -bool true
-defaults write com.apple.finder ShowPathbar -bool true
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
-defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
-defaults write com.apple.Finder QuitMenuItem -bool true
-defaults write com.apple.finder CreateDesktop -bool false
-defaults write com.apple.finder DisableAllAnimations -bool true
-defaults write com.apple.finder QLEnableTextSelection -bool true
-defaults write com.apple.finder NewWindowTarget -string "PfLo"
-defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
+sudo defaults write com.apple.finder AppleShowAllFiles -bool true
+sudo defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+sudo defaults write com.apple.finder ShowStatusBar -bool true
+sudo defaults write com.apple.finder ShowPathbar -bool true
+sudo defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+sudo defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
+sudo defaults write com.apple.Finder QuitMenuItem -bool true
+sudo defaults write com.apple.finder CreateDesktop -bool false
+sudo defaults write com.apple.finder DisableAllAnimations -bool true
+sudo defaults write com.apple.finder QLEnableTextSelection -bool true
+sudo defaults write com.apple.finder NewWindowTarget -string "PfLo"
+sudo defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
 
-defaults write com.apple.dock no-glass -bool true
-defaults write com.apple.dock expose-animation-duration -float 0.1
-defaults write com.apple.dock autohide -bool true
-defaults write com.apple.dock autohide-delay -float 0
-defaults write com.apple.dock autohide-time-modifier -float 1
+sudo defaults write com.apple.dock no-glass -bool true
+sudo defaults write com.apple.dock expose-animation-duration -float 0.1
+sudo defaults write com.apple.dock autohide -bool true
+sudo defaults write com.apple.dock autohide-delay -float 0
+sudo defaults write com.apple.dock autohide-time-modifier -float 1
 
-defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
-defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
-defaults write com.apple.LaunchServices LSQuarantine -bool false
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
-defaults write com.apple.universalaccess reduceTransparency -bool true
-defaults write com.apple.BezelServices kDimTime -int 300
-defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+sudo defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+sudo defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+sudo defaults write com.apple.LaunchServices LSQuarantine -bool false
+sudo defaults write com.apple.screensaver askForPassword -int 1
+sudo defaults write com.apple.screensaver askForPasswordDelay -int 0
+sudo defaults write com.apple.universalaccess reduceTransparency -bool true
+sudo defaults write com.apple.BezelServices kDimTime -int 300
+sudo defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
-defaults write com.apple.Safari UniversalSearchEnabled -bool false
-defaults write com.apple.Safari SuppressSearchSuggestions -bool true
-defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
-defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool false
-defaults write com.google.Chrome DisablePrintPreview -bool true
-defaults write com.google.Chrome.canary DisablePrintPreview -bool true
+sudo defaults write com.apple.Safari UniversalSearchEnabled -bool false
+sudo defaults write com.apple.Safari SuppressSearchSuggestions -bool true
+sudo defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
+sudo defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool false
+sudo defaults write com.google.Chrome DisablePrintPreview -bool true
+sudo defaults write com.google.Chrome.canary DisablePrintPreview -bool true
 
-defaults write -g com.apple.trackpad.scaling 2
-defaults write -g com.apple.mouse.scaling 2.5
+sudo defaults write -g com.apple.trackpad.scaling 2
+sudo defaults write -g com.apple.mouse.scaling 2.5
 
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
-defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
-defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
-defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
-defaults write NSGlobalDomain NSDocumentSaveNewDocumentsTo
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
-defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
-defaults write NSGlobalDomain AppleFontSmoothing -int 2
-defaults write NSGlobalDomain KeyRepeat -int 2
-defaults write NSGlobalDomain InitialKeyRepeat -int 15
+sudo defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+sudo defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+sudo defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+sudo defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+sudo defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+sudo defaults write NSGlobalDomain NSDocumentSaveNewDocumentsTo
+sudo defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+sudo defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+sudo defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+sudo defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+sudo defaults write NSGlobalDomain AppleFontSmoothing -int 2
+suod defaults write NSGlobalDomain KeyRepeat -int 2
+sudo defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
-defaults write -g NSTableViewDefaultSizeMode -int 3
-defaults write -g ApplePressAndHoldEnabled -bool false
+sudo defaults write -g NSTableViewDefaultSizeMode -int 3
+sudo defaults write -g ApplePressAndHoldEnabled -bool false
 
-killall Finder || true
-killall Dock || true
-killall SystemUIServer || true
+sudo killall Finder || true
+sudo killall Dock || true
+sudo killall SystemUIServer || true
 
 chflags nohidden ~/Library
 
