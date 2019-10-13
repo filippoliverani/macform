@@ -64,13 +64,13 @@ sudo defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 sudo defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 sudo defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 sudo defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
-sudo defaults write NSGlobalDomain NSDocumentSaveNewDocumentsTo
+sudo defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 sudo defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 sudo defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 sudo defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 sudo defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 sudo defaults write NSGlobalDomain AppleFontSmoothing -int 2
-suod defaults write NSGlobalDomain KeyRepeat -int 2
+sudo defaults write NSGlobalDomain KeyRepeat -int 2
 sudo defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 sudo defaults write -g NSTableViewDefaultSizeMode -int 3
@@ -85,7 +85,7 @@ chflags nohidden ~/Library
 sudo pmset -a sms 0
 sudo pmset -a powernap 0
 sudo pmset hibernatemode 25
-hash tmutil &> /dev/null && sudo tmutil disablelocal
+hash tmutil &> /dev/null && sudo tmutil disable
 
 #brew
 
@@ -94,6 +94,8 @@ brew analytics off
 brew tap Homebrew/bundle
 brew bundle --file="$HOME/.macform/Brewfile"
 xcrun simctl delete unavailable
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+sudo xcodebuild -license accept || true
 
 #ruby
 
