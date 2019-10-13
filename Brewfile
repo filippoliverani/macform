@@ -1,7 +1,7 @@
 cask_args appdir: '/Applications'
 
 tap 'chef/chef'
-tap 'homebrew/cask-drives'
+tap 'homebrew/cask-drivers'
 tap 'homebrew/cask-versions'
 
 brew 'bat'
