@@ -97,29 +97,24 @@ xcrun simctl delete unavailable
 
 #ruby
 
-/usr/local/bin/gem install bundler
-/usr/local/bin/gem install rubocop
+$(brew --prefix ruby)/bin/gem install rubocop
 
-#atom
+#vscode
 
-/usr/local/bin/apm install ex-mode
-/usr/local/bin/apm install vim-mode
+code --install-extension rebornix.ruby vscodevim.vim
 
 #node
 
-/usr/local/bin/npm install -g eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-promise eslint-plugin-react eslint-plugin-jsx-a11y eslint-plugin-vue
+$(brew --prefix node)/libexec/bin/npm install -g npm eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-promise eslint-plugin-react eslint-plugin-vue
 
-#scheme
+#racket
 
-/usr/local/bin/raco pkg install --auto --scope installation --skip-installed berkeley xrepl
+$(brew --prefix racket)/bin/raco pkg install --auto --scope installation --skip-installed berkeley xrepl
 
 #python
 
-/usr/local/bin/pip install pip
-/usr/local/bin/pip install setuptools
-/usr/local/bin/pip install psutil
+$(brew --prefix python)/libexec/bin/pip install pip setuptools psutil
 
 #vagrant
 
-/usr/local/bin/vagrant plugin install vagrant-vbguest
-/usr/local/bin/vagrant plugin install vagrant-berkshelf
+/usr/local/bin/vagrant plugin install vagrant-vbguest vagrant-berkshelf
