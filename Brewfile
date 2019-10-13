@@ -1,7 +1,6 @@
 cask_args appdir: '/Applications'
 
 tap 'chef/chef'
-tap 'filippoliverani/alcoholfree'
 tap 'homebrew/cask-drives'
 tap 'homebrew/cask-versions'
 
