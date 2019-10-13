@@ -1,14 +1,16 @@
 cask_args appdir: '/Applications'
 
-tap 'caskroom/cask'
-tap 'filippo-liverani/alcoholfree'
+tap 'chef/chef'
+tap 'filippoliverani/alcoholfree'
+tap 'homebrew/cask-drives'
+tap 'homebrew/cask-versions'
 
 brew 'bat'
 brew 'cask'
 brew 'colordiff'
 brew 'coreutils'
 brew 'ctags'
-brew 'curl', args: ['with-openssl']
+brew 'curl-openssl'
 brew 'dfc'
 brew 'exa'
 brew 'fpp'
@@ -37,7 +39,7 @@ brew 'terraform'
 brew 'tig'
 brew 'tmux'
 brew 'urlview'
-brew 'vim', args: ['with-override-system-vi']
+brew 'vim'
 brew 'wget'
 brew 'yarn'
 brew 'zsh'
@@ -55,6 +57,7 @@ cask 'firefox'
 cask 'firefox-developer-edition'
 cask 'garmin-express'
 cask 'google-backup-and-sync'
+cask 'lastpass'
 cask 'iterm2'
 cask 'microsoft-teams'
 cask 'monolingual'
@@ -71,10 +74,6 @@ cask 'visual-studio-code'
 cask 'wireshark'
 cask 'zoomus'
 
-mas 'Keynote', id: 409183694
-mas 'LastPass', id: 926036361
 mas 'Microsoft Remote Desktop', id: 1295203466
-mas 'Numbers', id: 409203825
-mas 'Pages', id: 409201541
 mas 'Tomato One', id: 907364780
 mas 'Xcode', id: 497799835
