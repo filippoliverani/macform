@@ -5,7 +5,6 @@ set -e
 path="$HOME/.macform"
 
 xcode-select --install || true
-sudo xcodebuild -license accept || true
 
 if [ -e $path/.git ]; then
   cd $path && git pull
