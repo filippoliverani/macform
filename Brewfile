@@ -1,6 +1,7 @@
 cask_args appdir: '/Applications'
 
 tap 'chef/chef'
+tap 'filippoliverani/alcoholfree'
 tap 'homebrew/cask-drivers'
 tap 'homebrew/cask-versions'
 
@@ -60,6 +61,7 @@ cask 'lastpass'
 cask 'iterm2'
 cask 'microsoft-teams'
 cask 'monolingual'
+cask 'multifirefox'
 cask 'postman'
 cask 'skype'
 cask 'steam'
