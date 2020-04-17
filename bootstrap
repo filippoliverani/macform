@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
@@ -14,8 +14,8 @@ ln -sf $path/Brewfile ~/.Brewfile
 xcode-select --install || true
 sh $path/install
 
-curl https://raw.github.com/filippoliverani/dotfiles/master/bootstrap -L -o - | sh
-curl https://raw.github.com/filippoliverani/zshell/master/bootstrap -L -o - | sh
-curl https://raw.github.com/filippoliverani/determinal/master/bootstrap -L -o - | sh
-curl https://raw.github.com/filippoliverani/simsalavim/master/bootstrap -L -o - | sh
-curl https://raw.github.com/filippoliverani/turbomux/master/bootstrap -L -o - | sh
+curl https://raw.github.com/filippoliverani/dotfiles/master/bootstrap -L -o - | bash
+curl https://raw.github.com/filippoliverani/zshell/master/bootstrap -L -o - | bash
+curl https://raw.github.com/filippoliverani/determinal/master/bootstrap -L -o - | bash
+curl https://raw.github.com/filippoliverani/simsalavim/master/bootstrap -L -o - | bash
+curl https://raw.github.com/filippoliverani/turbomux/master/bootstrap -L -o - | bash
