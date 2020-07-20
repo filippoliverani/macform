@@ -94,8 +94,8 @@ brew analytics off
 brew tap Homebrew/bundle
 brew bundle --file="$HOME/.macform/Brewfile"
 xcrun simctl delete unavailable
-sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
-sudo xcodebuild -license accept || true
+xcode-select --install
+sudo xcode-select --switch /Library/Developer/CommandLineTools
 
 #ruby
 
@@ -116,7 +116,3 @@ $(brew --prefix racket)/bin/raco pkg install --auto --scope installation --skip-
 #python
 
 $(brew --prefix python)/libexec/bin/pip install pip setuptools psutil
-
-#vagrant
-
-/usr/local/bin/vagrant plugin install vagrant-vbguest vagrant-berkshelf
