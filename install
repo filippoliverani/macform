@@ -93,9 +93,6 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew analytics off
 brew tap Homebrew/bundle
 brew bundle --file="$HOME/.macform/Brewfile"
-xcrun simctl delete unavailable
-xcode-select --install
-sudo xcode-select --switch /Library/Developer/CommandLineTools
 
 #ruby
 
