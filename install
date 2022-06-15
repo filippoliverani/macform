@@ -76,6 +76,13 @@ sudo defaults write NSGlobalDomain InitialKeyRepeat -int 15
 sudo defaults write -g NSTableViewDefaultSizeMode -int 3
 sudo defaults write -g ApplePressAndHoldEnabled -bool false
 
+sudo rm -rfv "~/Library/LanguageModeling/*" "~/Library/Spelling/*" "~/Library/Suggestions/*" \
+  "~/Library/Application Support/Quick Look/*" "/.DocumentRevisions-V100/*" ~/Library/Assistant/SiriAnalytics.db \
+sudo chmod -R 000 ~/Library/LanguageModeling ~/Library/Spelling ~/Library/Suggestions \ || true
+  "~/Library/Application Support/Quick Look" /.DocumentRevisions-V100 ~/Library/Assistant/SiriAnalytics.db
+sudo chflags -R uchg ~/Library/LanguageModeling ~/Library/Spelling ~/Library/Suggestions \
+  "~/Library/Application Support/Quick Look" /.DocumentRevisions-V100 ~/Library/Assistant/SiriAnalytics.db || true
+
 sudo killall Finder || true
 sudo killall Dock || true
 sudo killall SystemUIServer || true
