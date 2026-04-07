@@ -3,7 +3,7 @@ set -e
 
 sudo softwareupdate -ia
 
-echo 'export PATH=/usr/local/bin:/usr/local/sbin:$PATH' > ~/.profile
+echo 'export PATH=/usr/local/bin:/usr/local/sbin:$PATH' >~/.profile
 
 #config
 
@@ -20,6 +20,8 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
 
 sudo spctl --master-disable
+
+sudo defaults write com.apple.Accessibility ReduceMotionEnabled -bool true
 
 sudo defaults write com.apple.finder AppleShowAllFiles -bool true
 sudo defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
@@ -38,7 +40,11 @@ sudo defaults write com.apple.dock no-glass -bool true
 sudo defaults write com.apple.dock expose-animation-duration -float 0.1
 sudo defaults write com.apple.dock autohide -bool true
 sudo defaults write com.apple.dock autohide-delay -float 0
-sudo defaults write com.apple.dock autohide-time-modifier -float 1
+sudo defaults write com.apple.dock autohide-time-modifier -float 0
+sudo defaults write com.apple.dock springboard-show-duration -float 0
+sudo defaults write com.apple.dock springboard-hide-duration -float 0
+sudo defaults write com.apple.dock springboard-page-duration -float 0
+sudo defaults write com.apple.dock launchanim -bool false
 
 sudo defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 sudo defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
@@ -66,6 +72,12 @@ sudo defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool fal
 sudo defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 sudo defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 sudo defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+sudo defaults write NSGlobalDomain NSScrollAnimationEnabled -bool false
+sudo defaults write NSGlobalDomain NSScrollViewRubberbanding -bool false
+sudo defaults write NSGlobalDomain NSDocumentRevisionsWindowTransformAnimation -bool false
+sudo defaults write NSGlobalDomain QLPanelAnimationDuration -int 0
+sudo defaults write NSGlobalDomain NSToolbarFullScreenAnimationDuration -int 0
+sudo defaults write NSGlobalDomain NSBrowserColumnAnimationSpeedMultiplier -int 0
 sudo defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 sudo defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 sudo defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
@@ -78,8 +90,8 @@ sudo defaults write -g ApplePressAndHoldEnabled -bool false
 
 sudo rm -rfv "~/Library/LanguageModeling/*" "~/Library/Spelling/*" "~/Library/Suggestions/*" \
   "~/Library/Application Support/Quick Look/*" "/.DocumentRevisions-V100/*" ~/Library/Assistant/SiriAnalytics.db \
-sudo chmod -R 000 ~/Library/LanguageModeling ~/Library/Spelling ~/Library/Suggestions \ || true
-  "~/Library/Application Support/Quick Look" /.DocumentRevisions-V100 ~/Library/Assistant/SiriAnalytics.db
+  sudo chmod -R 000 ~/Library/LanguageModeling ~/Library/Spelling ~/Library/Suggestions \  || true
+"~/Library/Application Support/Quick Look" /.DocumentRevisions-V100 ~/Library/Assistant/SiriAnalytics.db
 sudo chflags -R uchg ~/Library/LanguageModeling ~/Library/Spelling ~/Library/Suggestions \
   "~/Library/Application Support/Quick Look" /.DocumentRevisions-V100 ~/Library/Assistant/SiriAnalytics.db || true
 
@@ -92,11 +104,11 @@ chflags nohidden ~/Library
 sudo pmset -a sms 0
 sudo pmset -a powernap 0
 sudo pmset hibernatemode 25
-hash tmutil &> /dev/null && sudo tmutil disable
+hash tmutil &>/dev/null && sudo tmutil disable
 
 #brew
 
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" </dev/null
 brew analytics off
 brew tap Homebrew/bundle
 brew bundle --file="$HOME/.macform/Brewfile"
